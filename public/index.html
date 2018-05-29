@@ -1,18 +1,41 @@
+
+<!Doctype html>
 <html>
 
 <head>
-	<title>Hot dog == sandwiches?</title>
-	<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase-firestore.js"></script>
+	<title>Firebase Web Basics</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+	<script src="https://use.fontawesome.com/939e9dd52c.js"></script>
 
 </head>
 
 <body>
+	
+	<div class="mainDiv" align="left">
+		<h1 align="left">Firebase Web App</h1>
+		<textarea placeholder="Enter text here ..."></textarea>
+		<button id="submitBtn" onclick="submitClick()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+	</div>
+	
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+		apiKey: "AIzaSyALieS9ec6_ismgAR5NJhkNt8tznyyUJEk",
+		authDomain: "test-nodejs-202205.firebaseapp.com",
+		databaseURL: "https://test-nodejs-202205.firebaseio.com",
+		projectId: "test-nodejs-202205",
+		storageBucket: "test-nodejs-202205.appspot.com",
+		messagingSenderId: "472396530727"
+		};
+		firebase.initializeApp(config);
+	</script>
 
-	<h1 id="hotDogOutput">Hot dog status:</h1>
-	<input type="textfield" id="latestHotDogStatus" />
-	<button id = "saveButton">Save</button>
-	<script src="./app.js"></script>
+	<!-- Here is the pre object, where data will be defined by app.js -->
+	<pre id="object"></pre>
+
+	<script src="app.js"></script>
+	
 
 </body>
 

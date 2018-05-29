@@ -1,33 +1,20 @@
-// 'use strict';
-// const admin = require("firebase-admin");
-// const serviceAccount = require('./ServiceAccountKey.json')
-// const firebase = require("firebase");
+var mainText = document.getElementById("mainText");
+var submitBtn = document.getElementById("submitBtn");
 
-// Initialize Firebase
-var config = {
-	apiKey: "AIzaSyALieS9ec6_ismgAR5NJhkNt8tznyyUJEk",
-	authDomain: "test-nodejs-202205.firebaseapp.com",
-	databaseURL: "https://test-nodejs-202205.firebaseio.com",
-	projectId: "test-nodejs-202205",
-	storageBucket: "test-nodejs-202205.appspot.com",
-	messagingSenderId: "472396530727"
+console.log("test")
+
+// Function for what the click button does
+function submitClick() {
+	var firebaseRef = firebase.database().ref();
+	firebaseRef.child("Something").set("Some Value");
 };
-firebase.initializeApp(config);
-var firestore = firebase.firestore();
 
-const docRef = firestore.doc("samples/sandwichData");
-const outputHeader = document.querySelector("#hotDogOutput");
-const inputTextField = document.querySelector("#latestHotDogStatus");
-const saveButton = document.querySelector("#saveButton");
+// Reference HTML section for an object before it was made, and then the database object
+const preObject = document.getElementById("object");
+const dbRefObject = firebase.database().ref().child("object");
 
-saveButton.addEventListener("click", function() {
-	const textToSave = inputTextField.value;
-	console.log("I am going to save " + textToSave + " to Firestore");
-	docRef.set({
-		hotDogStatus: textToSave
-	}).then(function(){
-		console.log("Status saved!");
-	}).catch(function (error) {
-		console.log("Got an error: ", error);
-	});
-})
+// Show in the console whenever a value changes in the realtime database
+dbRefObject.on("value", snap => console.log(snap.val()));
+
+// Display the JSON value of the value in the object
+dbRefObject.on("value", snap => preObject.innerText = JSON.stringify(snap.val(), null, 3))
