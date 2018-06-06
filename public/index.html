@@ -13,7 +13,7 @@
 	
 	<div class="mainDiv" align="left">
 		<h1 align="left">Firebase Web App</h1>
-		<textarea placeholder="Enter text here ..."></textarea>
+		<textarea id="dataIn" placeholder="Enter text here ..."></textarea>
 		<button id="submitBtn" onclick="submitClick()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 	</div>
 	
@@ -21,13 +21,18 @@
 	<script>
 		// Initialize Firebase
 		var config = {
-
+		apiKey: "AIzaSyALieS9ec6_ismgAR5NJhkNt8tznyyUJEk",
+		authDomain: "test-nodejs-202205.firebaseapp.com",
+		databaseURL: "https://test-nodejs-202205.firebaseio.com",
+		projectId: "test-nodejs-202205",
+		storageBucket: "test-nodejs-202205.appspot.com",
+		messagingSenderId: "472396530727"
 		};
 		firebase.initializeApp(config);
 	</script>
 
 	<!-- Here is the pre object, where data will be defined by app.js -->
-	<pre id="object"></pre>
+	<pre id="mote"></pre>
 
 	<script src="app.js"></script>
 	
