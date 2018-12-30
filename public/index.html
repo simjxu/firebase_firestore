@@ -1,43 +1,44 @@
-
-<!Doctype html>
 <html>
+  <head>
+    <title>Device Data</title>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-firestore.js"></script>
 
-<head>
-	<title>Firebase Web Basics</title>
-	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
-	<script src="https://use.fontawesome.com/939e9dd52c.js"></script>
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); 
+            font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; 
+                padding: 32px 24px; border-radius: 3px; }
+      #message h3 { color: #228B22; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h2 { color: #003366; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; 
+      text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
 
-</head>
+  <body>
+      <div id="message">
+        <h2>Simon's App</h2>
+        <h1>Firestore Database</h1>
+        <p>To add something to Firestore database, do a POST request 
+          to https://sjx-restapi.firebaseapp.com/database/</p>
+        <h3 id="deviceData">Default Text</h3>
+        <script src="./app.js"></script>
+      </div>
 
-<body>
-	
-	<div class="mainDiv" align="left">
-		<h1 align="left">Firebase Web App</h1>
-		<textarea id="dataIn" placeholder="Enter text here ..."></textarea>
-		<button id="submitBtn" onclick="submitClick()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-	</div>
-	
-	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
-	<script>
-		// Initialize Firebase
-		var config = {
-		apiKey: "AIzaSyALieS9ec6_ismgAR5NJhkNt8tznyyUJEk",
-		authDomain: "test-nodejs-202205.firebaseapp.com",
-		databaseURL: "https://test-nodejs-202205.firebaseio.com",
-		projectId: "test-nodejs-202205",
-		storageBucket: "test-nodejs-202205.appspot.com",
-		messagingSenderId: "472396530727"
-		};
-		firebase.initializeApp(config);
-	</script>
-
-	<!-- Here is the pre object, where data will be defined by app.js -->
-	<pre id="just_mac"></pre>
-	<pre id="full_json_text"></pre>
-
-	<script src="app.js"></script>
-	
-
-</body>
-
+      <div id="message">
+          <h2>Another App</h2>
+          <h1>Put Something Here</h1>
+          <p>Placeholder for something else</p>
+        </div>
+    
+  </body>
 </html>
